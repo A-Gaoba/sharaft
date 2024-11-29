@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { hotels } from "../data";
 
 const TravelForm = () => {
   const [formData, setFormData] = useState({
@@ -14,6 +15,7 @@ const TravelForm = () => {
     numberOfDays: "",
     withBreakfast: false,
     whatsappNumber: "",
+    selectedHotel: "",
   });
 
   const handleChange = (e) => {
@@ -36,6 +38,7 @@ const TravelForm = () => {
     // Construct the message to be sent via WhatsApp
     let message = `👤 الاسم: ${formData.name}\n`;
     message += `👥 عدد الأشخاص: ${formData.numberOfPeople}\n`;
+    message += `🏨 الفندق المختار: ${formData.selectedHotel}\n`; // Add selected hotel
     if (formData.hasChildren) {
       message += `👶 عدد الأطفال: ${formData.numberOfChildren}\n`;
       message += `👶 أعمار الأطفال: ${formData.childrenAges.join(", ")}\n`;
@@ -67,6 +70,7 @@ const TravelForm = () => {
       numberOfDays: "",
       withBreakfast: false,
       whatsappNumber: "",
+      selectedHotel: "",
     });
   };
 
@@ -172,6 +176,22 @@ const TravelForm = () => {
                 ))}
               </>
             )}
+            <div>
+              <select
+                id="selectedHotel"
+                name="selectedHotel"
+                value={formData.selectedHotel}
+                onChange={handleChange}
+                className="block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+              >
+                <option value="">اختر الفندق</option>
+                {hotels.map((hotel, index) => (
+                  <option key={index} value={hotel.name}>
+                    {hotel.name}
+                  </option>
+                ))}
+              </select>
+            </div>
             <div>
               <label htmlFor="numberOfDays" className="sr-only">
                 عدد الأيام
