@@ -115,10 +115,10 @@ const ContactUs = () => {
               </form>
             </div>
             <div className="relative bg-gradient-to-r from-red-700 via-red-500 to-red-800 p-8 shadow-xl rounded-lg transform transition duration-500 hover:scale-105 hidden md:block">
-              <h3 className="text-lg font-medium text-gray-900">
+              <h3 className="text-lg font-medium text-white">
                 معلومات الاتصال
               </h3>
-              <ul className="mt-6 space-y-4 text-gray-600 text-right">
+              <ul className="mt-6 space-y-4 text-gray-200 text-right">
                 <li>
                   <span className="font-bold">العنوان:</span> شارع السلام،
                   المدينة، الدولة
