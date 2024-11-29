@@ -3,6 +3,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { hotels } from "../data";
 
+
 const TravelForm = () => {
   const [formData, setFormData] = useState({
     name: "",

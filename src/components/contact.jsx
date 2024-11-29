@@ -54,9 +54,7 @@ const ContactUs = () => {
         <div className="mt-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="relative bg-gradient-to-r from-red-700 via-red-500 to-red-800 border p-8 shadow-xl rounded-lg transform transition duration-500 hover:scale-105">
-              <h3 className="text-lg font-medium text-white">
-                أرسل لنا رسالة
-              </h3>
+              <h3 className="text-lg font-medium text-white">أرسل لنا رسالة</h3>
               <form onSubmit={handleSubmit} className="mt-6 ">
                 <div className="grid grid-cols-1 gap-y-6">
                   <div>
@@ -120,15 +118,15 @@ const ContactUs = () => {
               </h3>
               <ul className="mt-6 space-y-4 text-gray-200 text-right">
                 <li>
-                  <span className="font-bold">العنوان:</span> شارع السلام،
-                  المدينة، الدولة
+                  <span className="font-bold">العنوان:</span> موسكو المدينة،
+                  الدولة
                 </li>
                 <li>
-                  <span className="font-bold">الهاتف:</span> +123 456 789
+                  <span className="font-bold">الهاتف:</span> +79174828474
                 </li>
                 <li>
                   <span className="font-bold">البريد الإلكتروني:</span>{" "}
-                  info@example.com
+                  sharaf@mail.com
                 </li>
               </ul>
               <div className="mt-8 flex justify-center space-x-6 space-x-reverse">
@@ -147,7 +145,7 @@ const ContactUs = () => {
                   <span className="sr-only">واتساب</span>
                 </a>
                 <a
-                  href="tel:+123456789"
+                  href="tel:+89174828474"
                   className="text-blue-500 hover:text-blue-600"
                 >
                   <FaPhone className="h-8 w-8" />

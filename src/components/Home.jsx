@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import icon from "/icon.png";
+import icon from "/logo.svg";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import TravelForm from "./Form";
@@ -48,14 +48,12 @@ export default function Example() {
       >
         <nav
           aria-label="Global"
-          className="flex items-center justify-between p-6 lg:px-8"
+          className="flex items-center justify-between p-1 px-2 lg:px-8"
         >
           <div className="flex lg:flex-1">
-            <span className="text-xl font-medium text-white -m-1.5 p-1.5">
-              <a href="#"> SHARAFT</a>
-            </span>
+            <span className="text-xl font-medium text-white -m-1.5 p-1.5"></span>
             <a href="#" className="-m-1.5 p-1.5">
-              <img alt="" src={icon} className="h-8 w-auto" />
+              <img alt="" src={icon} className=" h-20 w-auto" />
             </a>
           </div>
           <div className="flex lg:hidden">
@@ -97,8 +95,7 @@ export default function Example() {
           <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gradient-to-r from-red-700 via-red-500 to-red-800 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5 flex text-white">
-                <img alt="" src={icon} className="h-8 w-auto" />
-                {/* <span>SHARAFT</span> */}
+                <img alt="" src={icon} className="h-14 w-auto" />
               </a>
               <button
                 type="button"
