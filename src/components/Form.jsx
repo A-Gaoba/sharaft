@@ -30,33 +30,44 @@ const TravelForm = () => {
     setFormData({ ...formData, childrenAges: newChildrenAges });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const response = await fetch("https://formspree.io/f/mqkozgdr", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
 
-    if (response.ok) {
-      toast.success("تم إرسال الطلب بنجاح!");
-      setFormData({
-        name: "",
-        numberOfPeople: "",
-        hasChildren: false,
-        numberOfChildren: "",
-        childrenAges: [],
-        startDate: "",
-        endDate: "",
-        numberOfDays: "",
-        withBreakfast: false,
-        whatsappNumber: "",
-      });
-    } else {
-      toast.error("حدث خطأ أثناء إرسال الطلب. حاول مرة أخرى.");
+    // Construct the message to be sent via WhatsApp
+    let message = `👤 الاسم: ${formData.name}\n`;
+    message += `👥 عدد الأشخاص: ${formData.numberOfPeople}\n`;
+    if (formData.hasChildren) {
+      message += `👶 عدد الأطفال: ${formData.numberOfChildren}\n`;
+      message += `👶 أعمار الأطفال: ${formData.childrenAges.join(", ")}\n`;
     }
+    message += `📅 عدد الأيام: ${formData.numberOfDays}\n`;
+    message += `🛫 تاريخ البدء: ${formData.startDate}\n`;
+    message += `🛬 تاريخ الانتهاء: ${formData.endDate}\n`;
+    message += formData.withBreakfast ? `🥐 يشمل الإفطار\n` : "";
+    message += `📱 رقم الواتساب: ${formData.whatsappNumber}`;
+
+    // Create the WhatsApp URL
+    const whatsappUrl = `https://wa.me/79174828474?text=${encodeURIComponent(
+      message
+    )}`;
+
+    // Open the WhatsApp link to send the message
+    window.open(whatsappUrl, "_blank");
+
+    // Show success message and reset form
+    toast.success("تم إرسال الطلب بنجاح عبر واتساب!");
+    setFormData({
+      name: "",
+      numberOfPeople: "",
+      hasChildren: false,
+      numberOfChildren: "",
+      childrenAges: [],
+      startDate: "",
+      endDate: "",
+      numberOfDays: "",
+      withBreakfast: false,
+      whatsappNumber: "",
+    });
   };
 
   return (
@@ -231,12 +242,12 @@ const TravelForm = () => {
                 className="block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500"
               />
             </div>
-            <div className="mt-6">
+            <div>
               <button
                 type="submit"
-                className="w-full inline-flex justify-center py-3 px-6 border border-transparent shadow-lg text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               >
-                إرسال الطلب
+                إرسال
               </button>
             </div>
           </form>
