@@ -179,7 +179,7 @@ export default function Example() {
               </button>
               <a
                 href="#about"
-                className="text-sm font-semibold leading-6 text-gray-900"
+                className="text-sm font-semibold leading-6 text-gray-200 hover:text-sky-500"
               >
                 اعرف المزيد <span aria-hidden="true">→</span>
               </a>

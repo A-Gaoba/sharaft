@@ -38,7 +38,7 @@ const TravelForm = () => {
     // Construct the message to be sent via WhatsApp
     let message = `👤 الاسم: ${formData.name}\n`;
     message += `👥 عدد الأشخاص: ${formData.numberOfPeople}\n`;
-    message += `🏨 الفندق المختار: ${formData.selectedHotel}\n`; // Add selected hotel
+    message += `🏨 الفندق المختار: ${formData.selectedHotel}\n`;
     if (formData.hasChildren) {
       message += `👶 عدد الأطفال: ${formData.numberOfChildren}\n`;
       message += `👶 أعمار الأطفال: ${formData.childrenAges.join(", ")}\n`;

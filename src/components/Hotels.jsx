@@ -120,7 +120,7 @@ const HotelsOffer = () => {
   return (
     <div className="relative bg-gradient-to-r from-red-700 via-red-500 to-red-800 py-12" id="hotels">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-indigo-600 font-extrabold text-4xl tracking-wide mb-4">
+        <h2 className="text-gray-900 font-extrabold text-4xl tracking-wide mb-4">
           عروض الفنادق
         </h2>
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -135,10 +135,10 @@ const HotelsOffer = () => {
                 src={hotel.images[0]} // Use images array
                 alt={hotel.name}
               />
-              <h3 className="mt-4 text-lg leading-6 font-medium text-gray-900">
+              <h3 className="mt-4 text-lg leading-6 font-medium text-white">
                 {hotel.name}
               </h3>
-              <p className="mt-2 text-base leading-6 text-gray-500">
+              <p className="mt-2 text-base leading-6 text-gray-200">
                 {hotel.description}
               </p>
             </div>

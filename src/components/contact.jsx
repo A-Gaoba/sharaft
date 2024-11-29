@@ -40,13 +40,13 @@ const ContactUs = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-indigo-600 font-extrabold text-4xl tracking-wide mb-4">
+          <h2 className="text-gray-900 font-extrabold text-4xl tracking-wide mb-4">
             تواصل معنا
           </h2>
-          <p className="mt-2 leading-8 font-extrabold tracking-tight text-gray-900 text-2xl">
+          <p className="mt-2 leading-8 font-extrabold tracking-tight text-white text-2xl">
             نحن هنا لمساعدتك
           </p>
-          <p className="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+          <p className="mt-4 max-w-2xl text-xl text-gray-200 mx-auto">
             إذا كان لديك أي استفسارات أو تحتاج إلى أي مساعدة، لا تتردد في
             التواصل معنا عبر النموذج أدناه أو عبر وسائل الاتصال المختلفة.
           </p>
@@ -54,7 +54,7 @@ const ContactUs = () => {
         <div className="mt-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="relative bg-gradient-to-r from-red-700 via-red-500 to-red-800 border p-8 shadow-xl rounded-lg transform transition duration-500 hover:scale-105">
-              <h3 className="text-lg font-medium text-gray-900">
+              <h3 className="text-lg font-medium text-white">
                 أرسل لنا رسالة
               </h3>
               <form onSubmit={handleSubmit} className="mt-6 ">
