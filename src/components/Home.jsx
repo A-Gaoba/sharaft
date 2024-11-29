@@ -41,7 +41,9 @@ export default function Example() {
     >
       <header
         className={`top-0 left-0 z-50 w-full transition-all duration-300 ${
-          isSticky ? "fixed bg-white shadow-md" : "absolute"
+          isSticky
+            ? "fixed bg-gradient-to-r from-[#A51E1E] via-[#E02B2B] to-[#EE3030] shadow-md"
+            : "absolute"
         }`}
       >
         <nav
@@ -49,7 +51,7 @@ export default function Example() {
           className="flex items-center justify-between p-6 lg:px-8"
         >
           <div className="flex lg:flex-1">
-            <span className="text-xl font-medium text-indigo-600 -m-1.5 p-1.5">
+            <span className="text-xl font-medium text-white -m-1.5 p-1.5">
               <a href="#"> SHARAFT</a>
             </span>
             <a href="#" className="-m-1.5 p-1.5">
@@ -60,7 +62,7 @@ export default function Example() {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(true)}
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-indigo-600"
+              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
             >
               <span className="sr-only">فتح القائمة الرئيسية</span>
               <Bars3Icon aria-hidden="true" className="h-6 w-6" />
@@ -71,7 +73,7 @@ export default function Example() {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-sm font-semibold leading-6 text-gray-900"
+                className="text-sm font-semibold leading-6 text-white hover:text-sky-500"
               >
                 {item.name}
               </a>
@@ -80,7 +82,7 @@ export default function Example() {
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <a
               href="#contact"
-              className="text-sm font-bold leading-6 text-indigo-600"
+              className="text-sm font-bold leading-6 text-white hover:text-sky-500"
             >
               تواصل معنا <span aria-hidden="true">&rarr;</span>
             </a>
@@ -94,13 +96,14 @@ export default function Example() {
           <div className="fixed inset-0 z-50" />
           <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gradient-to-r from-red-700 via-red-500 to-red-800 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
-              <a href="#" className="-m-1.5 p-1.5">
+              <a href="#" className="-m-1.5 p-1.5 flex text-white">
                 <img alt="" src={icon} className="h-8 w-auto" />
+                {/* <span>SHARAFT</span> */}
               </a>
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(false)}
-                className="-m-2.5 rounded-md p-2.5 text-indigo-600"
+                className="-m-2.5 rounded-md p-2.5 text-white"
               >
                 <span className="sr-only">إغلاق القائمة</span>
                 <XMarkIcon aria-hidden="true" className="h-6 w-6" />
@@ -113,7 +116,7 @@ export default function Example() {
                     <a
                       key={item.name}
                       href={item.href}
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-sky-500"
                       onClick={closeMobileMenu}
                     >
                       {item.name}
@@ -123,7 +126,7 @@ export default function Example() {
                 <div className="py-6">
                   <a
                     href="#contact"
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-indigo-600 hover:bg-gray-50"
+                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-sky-500"
                     onClick={closeMobileMenu}
                   >
                     تواصل معنا
