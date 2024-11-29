@@ -98,7 +98,7 @@ const Footer = () => {
             &copy; 2024{" "}
             <a
               href="https://gaoba.vercel.app/"
-              className=" text-blue-500 font-bold"
+              className=" text-sky-500 font-bold"
             >
               Gaoba
             </a>
