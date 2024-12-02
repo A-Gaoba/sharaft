@@ -1,135 +1,12 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import EventForm from "./EventForm";
+import { events } from "../data";
 
 const Events = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [showAll, setShowAll] = useState(false);
 
-  const events = [
-    {
-      name: "كلاب الهاسكي",
-      description: "استمتع بجولات مذهلة مع كلاب الهاسكي في الريف الروسي.",
-      images: [
-        "https://png.pngtree.com/thumb_back/fh260/background/20220129/pngtree-sledge-dogs-in-speed-racing-sled-odyssee-running-photo-image_21218160.jpg",
-        "https://img.youm7.com/ArticleImgs/2020/12/30/43546-%D8%AA%D8%AF%D8%B1%D9%8A%D8%A8-%D8%A7%D9%84%D9%83%D9%84%D8%A7%D8%A8-%D8%A7%D9%84%D9%87%D8%A7%D8%B3%D9%83%D9%89-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D8%A5%D9%86%D9%82%D8%A7%D8%B0-(5).jpg",
-        "https://img.youm7.com/ArticleImgs/2020/12/30/39194-%D8%AA%D8%AF%D8%B1%D9%8A%D8%A8-%D8%A7%D9%84%D9%83%D9%84%D8%A7%D8%A8-%D8%A7%D9%84%D9%87%D8%A7%D8%B3%D9%83%D9%89-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D8%A5%D9%86%D9%82%D8%A7%D8%B0-(2).jpg",
-        "https://cdn.alweb.com/thumbs/aleeff/article/fit710x532/%D8%B5%D9%81%D8%A7%D8%AA-%D9%83%D9%84%D8%A7%D8%A8-%D8%A7%D9%84%D9%87%D8%A7%D8%B3%D9%83%D9%8A-%D8%A7%D9%84%D9%85%D9%85%D9%8A%D8%B2%D8%A7%D8%AA-%D9%88%D8%A7%D9%84%D8%B9%D9%8A%D9%88%D8%A8-%D9%88%D8%B7%D8%B1%D9%82-%D8%A7%D9%84%D8%AA%D8%B9%D8%A7%D9%85%D9%84-%D9%85%D8%B9%D9%87%D8%A7.jpg ",
-      ],
-    },
-    {
-      name: "الدب",
-      description: "لقاء قريب مع الدببة الروسية في بيئتها الطبيعية.",
-      images: [
-        "https://podarokservis.ru/image/cache/data/product/FOTO/2017.05.25.12-1000x1000.jpg",
-        "https://example.com/another-bear-image.jpg",
-      ],
-    },
-    {
-      name: "الأكواخ في الريف الروسي",
-      description: "تجربة الإقامة في الأكواخ الريفية وسط الطبيعة الخلابة.",
-      images: [
-        "https://optim.tildacdn.com/tild3666-6562-4332-b331-383534373262/-/format/webp/20231013_156_Copy_Co.jpg",
-        "https://example.com/another-cabin-image.jpg",
-      ],
-    },
-    {
-      name: "سيارات الدريفت",
-      description: "قيادة سيارات الدريفت المثيرة في مضمار خاص.",
-      images: [
-        "https://via.placeholder.com/150",
-        "https://example.com/another-drift-car-image.jpg",
-      ],
-    },
-    {
-      name: "هليكوبتر",
-      description: "جولات مروحية مذهلة لمشاهدة المعالم من السماء.",
-      images: [
-        "https://via.placeholder.com/150",
-        "https://example.com/another-helicopter-image.jpg",
-      ],
-    },
-    {
-      name: "دبابات كبيرة",
-      description: "تجربة قيادة الدبابات الكبيرة في ميادين خاصة.",
-      images: [
-        "https://via.placeholder.com/150",
-        "https://example.com/another-tank-image.jpg",
-      ],
-    },
-    {
-      name: "دبابات الثلج",
-      description: "مغامرات على دبابات الثلج في المناظر الطبيعية الثلجية.",
-      images: [
-        "https://via.placeholder.com/150",
-        "https://example.com/another-snowmobile-image.jpg",
-      ],
-    },
-    {
-      name: "المنطاد",
-      description: "رحلات منطاد هوائي لرؤية المناظر الطبيعية الخلابة.",
-      images: [
-        "https://via.placeholder.com/150",
-        "https://example.com/another-balloon-image.jpg",
-      ],
-    },
-    {
-      name: "الكروز",
-      description: "رحلات بحرية فاخرة للاستمتاع بالمحيطات والأنهار.",
-      images: [
-        "https://via.placeholder.com/150",
-        "https://example.com/another-cruise-image.jpg",
-      ],
-    },
-    {
-      name: "تذاكر المتاحف",
-      description: "استكشاف أفضل المتاحف والمعارض الثقافية.",
-      images: [
-        "https://via.placeholder.com/150",
-        "https://example.com/another-museum-image.jpg",
-      ],
-    },
-    {
-      name: "تذاكر طيران داخلي _قطارات",
-      description: "حجز تذاكر الطيران الداخلي والقطارات للسفر بسهولة.",
-      images: [
-        "https://via.placeholder.com/150",
-        "https://example.com/another-ticket-image.jpg",
-      ],
-    },
-    {
-      name: "الزبلاين",
-      description: "تجربة الزبلاين المثيرة عبر الغابات والوديان.",
-      images: [
-        "https://via.placeholder.com/150",
-        "https://example.com/another-zipline-image.jpg",
-      ],
-    },
-    {
-      name: "التلفريك",
-      description: "ركوب التلفريك لمشاهدة المناظر البانورامية الخلابة.",
-      images: [
-        "https://via.placeholder.com/150",
-        "https://example.com/another-cablecar-image.jpg",
-      ],
-    },
-    {
-      name: "جولات سياحية",
-      description: "جولات سياحية منظمة لاكتشاف أجمل الأماكن والمعالم.",
-      images: [
-        "https://via.placeholder.com/150",
-        "https://example.com/another-tour-image.jpg",
-      ],
-    },
-    {
-      name: "كارتنج",
-      description: "سباقات الكارتنج المثيرة لمحبي السرعة والإثارة.",
-      images: [
-        "https://via.placeholder.com/150",
-        "https://example.com/another-karting-image.jpg",
-      ],
-    },
-  ];
   const handleShowAll = () => {
     setShowAll(true);
   };
@@ -143,7 +20,10 @@ const Events = () => {
   };
 
   return (
-    <div className="relative bg-gradient-to-r from-red-700 via-red-500 to-red-800 py-12" id="events">
+    <div
+      className="relative bg-gradient-to-r from-red-700 via-red-500 to-red-800 py-12"
+      id="events"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-gray-900 font-extrabold text-4xl tracking-wide mb-4">
           فعاليات
@@ -228,4 +108,3 @@ EventCard.propTypes = {
 };
 
 export default Events;
-
